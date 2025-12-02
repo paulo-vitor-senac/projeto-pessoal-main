@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #253439;
+    color: #ffffff;
+}
+
+header {
+    background-color: #253439;
+    padding: 15px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px solid #ffffff;
+    gap: 20px;
+}
+
+header img {
+    width: 40px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+header h2 {
+    font-size: 22px;
+    font-weight: normal;
+    margin-right: 15px;
+}
+
+header h5 {
+    font-size: 14px;
+    font-weight: normal;
+    color: #bdc3c7;
+    flex-grow: 1;
+}
+
+nav {
+    display: flex;
+    gap: 5px;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 40px;
+    text-align: center;
+    min-height: calc(100vh - 150px);
+}
+
+main img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 30px;
+}
+
+main h1 {
+    font-size: 42px;
+    font-weight: normal;
+    margin-bottom: 5px;
+}
+
+main p {
+    font-size: 16px;
+    color: #bdc3c7;
+    margin-bottom: 50px;
+}
+
+main h3 {
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 1.8;
+    max-width: 700px;
+    color: #ecf0f1;
+}
+
+footer {
+    background-color: #253439;
+    text-align: center;
+    padding: 0px;
+    border-top: 2px solid white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    align-items: center;
+}
+
+footer p {
+    font-size: 14px;
+    background-color: #253439;
+    align-items: center;
+    top: 25px;
+    position: relative;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    nav {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    main h1 {
+        font-size: 32px;
+    }
+
+    main h3 {
+        font-size: 16px;
+    }
+
+    footer p {
+        top: 15px;
+        position: relative;
+    }
+}

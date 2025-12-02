@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #253439;
+    color: #ffffff;
+}
+
+header {
+    background-color: #253439;
+    padding: 15px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px solid #ffffff;
+    gap: 20px;
+}
+
+header img {
+    width: 40px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+header h2 {
+    font-size: 22px;
+    font-weight: normal;
+    margin-right: 15px;
+}
+
+header h5 {
+    font-size: 14px;
+    font-weight: normal;
+    color: #bdc3c7;
+    flex-grow: 1;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+nav {
+    display: flex;
+    gap: 5px;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+main {
+    text-align: center;
+    padding: 60px 20px;
+    min-height: calc(100vh - 200px);
+}
+
+main h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 80px;
+    letter-spacing: 2px;
+}
+
+.contato-telefone,
+.contato-email,
+.contato-github {
+    display: inline-block;
+    text-align: center;
+    margin: 0 80px;
+    vertical-align: top;
+}
+
+.contato-telefone img,
+.contato-email img,
+.contato-github img {
+    width: 240px;
+    height: 240px;
+    margin-bottom: 40px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contato-telefone p,
+.contato-email p,
+.contato-github p {
+    font-size: 26px;
+    color: #ffffff;
+    margin-top: 10px;
+}
+
+footer {
+    background-color: #253439;
+    text-align: center;
+    padding: 0px;
+    border-top: 2px solid white;
+    position: relative;
+    top: 50px;
+    width: 100%;
+    align-items: center;
+}
+
+footer p {
+    font-size: 14px;
+    background-color: #253439;
+    align-items: center;
+    top: 25px;
+    position: relative;
+}
