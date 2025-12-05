@@ -1,47 +1,59 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
+<head>
+    <meta charset="UTF-8">
     <title>Painel Administrativo - Visitas</title>
     <style>
-      body {
-        background: #121212;
-        color: #fff;
-        font-family: Arial;
-        padding: 20px;
-      }
-      h1 {
-        text-align: center;
-        margin-bottom: 30px;
-      }
-      .card {
-        background: #1f1f1f;
-        padding: 20px;
-        border-radius: 12px;
-        max-width: 400px;
-        margin: 0 auto;
-        text-align: center;
-      }
-      .count {
-        font-size: 48px;
-        font-weight: bold;
-        margin-top: 10px;
-        color: #4ade80;
-      }
+        body {
+            background: #121212;
+            color: white;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .card {
+            background: #1e1e1e;
+            padding: 20px;
+            border-radius: 12px;
+            max-width: 450px;
+            margin: 0 auto;
+            text-align: center;
+            box-shadow: 0px 0px 10px #00000055;
+        }
+        .count {
+            font-size: 48px;
+            font-weight: bold;
+            color: #4ade80;
+            margin-top: 10px;
+        }
     </style>
-  </head>
-  <body>
+</head>
+<body>
+
     <h1>Painel Administrativo</h1>
 
     <div class="card">
-      <h2>Visitas registradas</h2>
-      <div id="contador" class="count">Carregando...</div>
+        <h2>Total de Visitas Registradas</h2>
+        <div id="contador" class="count">Carregando...</div>
     </div>
 
     <script>
-      fetch("https://backend-projetopessoal.onrender.com/track", {
-        method: "POST",
-      });
+        async function carregarVisitas() {
+            try {
+                const resposta = await fetch("https://backend-projetopessoal.onrender.com/count");
+                const dados = await resposta.json();
+                document.getElementById("contador").textContent = dados.total;
+            } catch (erro) {
+                console.error("Erro ao carregar visitas:", erro);
+                document.getElementById("contador").textContent = "Erro";
+            }
+        }
+
+        carregarVisitas();
     </script>
-  </body>
+
+</body>
 </html>
