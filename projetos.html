@@ -48,9 +48,9 @@
       <p>&copy; 2025 Todos os Direitos Reservados - Paulo Vitor</p>
     </footer>
     <script>
-      fetch("https://backend-projetopessoal.onrender.com/registrar")
-        .then((r) => console.log("Visita registrada"))
-        .catch((e) => console.error("Erro:", e));
+      fetch("https://backend-projetopessoal.onrender.com/track", {
+        method: "POST",
+      });
     </script>
   </body>
 </html>

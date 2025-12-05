@@ -1,57 +1,47 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Painel Administrativo - Visitas</title>
     <style>
-        body {
-            background: #121212;
-            color: #fff;
-            font-family: Arial;
-            padding: 20px;
-        }
-        h1 {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        .card {
-            background: #1f1f1f;
-            padding: 20px;
-            border-radius: 12px;
-            max-width: 400px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        .count {
-            font-size: 48px;
-            font-weight: bold;
-            margin-top: 10px;
-            color: #4ade80;
-        }
+      body {
+        background: #121212;
+        color: #fff;
+        font-family: Arial;
+        padding: 20px;
+      }
+      h1 {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+      .card {
+        background: #1f1f1f;
+        padding: 20px;
+        border-radius: 12px;
+        max-width: 400px;
+        margin: 0 auto;
+        text-align: center;
+      }
+      .count {
+        font-size: 48px;
+        font-weight: bold;
+        margin-top: 10px;
+        color: #4ade80;
+      }
     </style>
-</head>
-<body>
-
+  </head>
+  <body>
     <h1>Painel Administrativo</h1>
 
     <div class="card">
-        <h2>Visitas registradas</h2>
-        <div id="contador" class="count">Carregando...</div>
+      <h2>Visitas registradas</h2>
+      <div id="contador" class="count">Carregando...</div>
     </div>
 
     <script>
-        async function carregarVisitas() {
-            try {
-                const req = await fetch("https://backend-projetopessoal.onrender.com/count");
-                const data = await req.json();
-                document.getElementById("contador").textContent = data.total;
-            } catch (e) {
-                document.getElementById("contador").textContent = "Erro";
-            }
-        }
-
-        carregarVisitas();
+      fetch("https://backend-projetopessoal.onrender.com/track", {
+        method: "POST",
+      });
     </script>
-
-</body>
+  </body>
 </html>
