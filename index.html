@@ -1,40 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfólio - Paulo</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<body>
+  <body>
     <header>
-        <img src="img/pessoa-Photoroom.png" alt="">
-        <a href="index.html">
-            <h2>Paulo Vitor</h2>
-        </a>
-        <h5>Desenvolvedor Full Stack</h5>
-        <nav>
-            <a href="index.html">Início | </a>
-            <a href="cursos.html">Cursos | </a>
-            <a href="projetos.html">Projetos | </a>
-            <a href="contato.html">Contato </a>
-        </nav>
-        <br>
+      <img src="img/pessoa-Photoroom.png" alt="" />
+      <a href="index.html">
+        <h2>Paulo Vitor</h2>
+      </a>
+      <h5>Desenvolvedor Full Stack</h5>
+      <nav>
+        <a href="index.html">Início | </a>
+        <a href="cursos.html">Cursos | </a>
+        <a href="projetos.html">Projetos | </a>
+        <a href="contato.html">Contato </a>
+      </nav>
+      <br />
     </header>
     <main>
-        <img src="img/eu.jpg" alt="">
-        <h1>Paulo Vitor</h1>
-        <p>Um pouco sobre mim</p>
-        <h3>Sou um Desenvolvedor Full stack, tenho 15 anos e atualmente estou cursando no SenacTec em Uberlândia - MG.
-            Criei este portfólio para poder mostrar um pouco do meu trabalho e você poder saber um pouquinho mais sobre
-            mim.
-        </h3>
+      <img src="img/eu.jpg" alt="" />
+      <h1>Paulo Vitor</h1>
+      <p>Um pouco sobre mim</p>
+      <h3>
+        Sou um Desenvolvedor Full stack, tenho 15 anos e atualmente estou
+        cursando no SenacTec em Uberlândia - MG. Criei este portfólio para poder
+        mostrar um pouco do meu trabalho e você poder saber um pouquinho mais
+        sobre mim.
+      </h3>
     </main>
     <footer>
-        <p>&copy; 2025 Todos os Direitos Reservados - Paulo Vitor</p>
+      <p>&copy; 2025 Todos os Direitos Reservados - Paulo Vitor</p>
     </footer>
-</body>
-
+    <script>
+      fetch("https://backend-projetopessoal.onrender.com/registrar")
+        .then((r) => console.log("Visita registrada"))
+        .catch((e) => console.error("Erro:", e));
+    </script>
+  </body>
 </html>
