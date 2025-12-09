@@ -2,12 +2,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #253439;
 }
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #253439;
+    background-color: #0a1c24;
     color: #ffffff;
 }
 
@@ -19,6 +18,10 @@ header {
     justify-content: center;
     border-bottom: 2px solid #ffffff;
     gap: 20px;
+}
+
+header * {
+    background-color: transparent;
 }
 
 header img {
@@ -58,62 +61,140 @@ nav a {
     transition: color 0.3s;
 }
 
+nav a:hover {
+    color: #00c3ff;
+}
+
+/* Estilos do formulário de contato */
 main {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     padding: 60px 20px;
     min-height: calc(100vh - 200px);
+    background-color: #0a1c24;
 }
 
-main h2 {
-    font-size: 32px;
+.header-form {
+    font-size: 48px;
     font-weight: bold;
-    margin-bottom: 80px;
-    letter-spacing: 2px;
-}
-
-.contato-telefone,
-.contato-email,
-.contato-github {
-    display: inline-block;
-    text-align: center;
-    margin: 0 80px;
-    vertical-align: top;
-}
-
-.contato-telefone img,
-.contato-email img,
-.contato-github img {
-    width: 240px;
-    height: 240px;
-    margin-bottom: 40px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.contato-telefone p,
-.contato-email p,
-.contato-github p {
-    font-size: 26px;
     color: #ffffff;
-    margin-top: 10px;
+    margin-bottom: 50px;
+    background-color: transparent;
+}
+
+.header-form::first-line {
+    color: #00c3ff;
+}
+
+form {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: transparent;
+}
+
+form > div {
+    display: flex;
+    gap: 20px;
+    background-color: transparent;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 18px 20px;
+    background-color: transparent;
+    border: 2px solid #00c3ff;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+textarea::placeholder {
+    color: #ffffff;
+    opacity: 0.8;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: #00d4ff;
+    box-shadow: 0 0 10px rgba(0, 195, 255, 0.3);
+}
+
+textarea {
+    min-height: 280px;
+    resize: vertical;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+button[type="submit"] {
+    width: 150px;
+    padding: 15px 30px;
+    background-color: #00c3ff;
+    border: none;
+    border-radius: 8px;
+    color: #0a1c24;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 20px auto 0;
+    display: block;
+}
+
+button[type="submit"]:hover {
+    background-color: #00d4ff;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 195, 255, 0.4);
+}
+
+button[type="submit"]:active {
+    transform: translateY(0);
 }
 
 footer {
     background-color: #253439;
     text-align: center;
-    padding: 0px;
+    padding: 25px 0;
     border-top: 2px solid white;
-    position: relative;
-    top: 50px;
     width: 100%;
-    align-items: center;
+    margin-top: auto;
 }
 
 footer p {
     font-size: 14px;
-    background-color: #253439;
-    align-items: center;
-    top: 25px;
-    position: relative;
+    background-color: transparent;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .header-form {
+        font-size: 36px;
+    }
+    
+    form > div {
+        flex-direction: column;
+    }
+    
+    header {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    nav {
+        width: 100%;
+        justify-content: center;
+        margin-top: 10px;
+    }
 }
