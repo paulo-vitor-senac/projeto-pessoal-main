@@ -1,10 +1,11 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfólio - Paulo</title>
     <link rel="stylesheet" href="stylecontato.css">
 </head>
-
 <body>
     <header>
         <img src="img/pessoa-Photoroom.png" alt="">
@@ -46,6 +47,31 @@
     <footer>
         <p>&copy; 2025 Todos os Direitos Reservados - Paulo Vitor</p>
     </footer>
-    <script src="scriptcontato.js"></script>
+
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        (function(){
+            emailjs.init("7_4GeKAKGXRmJZQVy"); // Substitua pelo seu User ID do EmailJS
+        })();
+
+        const form = document.getElementById("meuForm");
+        const statusMensagem = document.getElementById("statusMensagem");
+
+        form.addEventListener("submit", function(e){
+            e.preventDefault();
+
+            emailjs.sendForm("service_d1kydlp", "template_hudeghk", this) // Template ID aqui
+            .then(() => {
+                statusMensagem.textContent = "Mensagem enviada com sucesso!";
+                statusMensagem.style.color = "green";
+                form.reset();
+            }, (err) => {
+                console.error(err);
+                statusMensagem.textContent = "Erro ao enviar a mensagem. Tente novamente.";
+                statusMensagem.style.color = "red";
+            });
+        });
+    </script>
 </body>
 </html>
