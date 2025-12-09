@@ -3,29 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Login do Admin</title>
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="stylelogin.css">
 </head>
 <body>
 
     <div class="login-container">
         <h2>Login do Admin</h2>
 
-        <form action="https://backend-projetopessoal.onrender.com/login" 
-              method="POST" 
-              id="loginForm">
+        <form id="loginForm">
 
-            <input type="text" name="username" placeholder="Usuário" required>
-            <input type="password" name="password" placeholder="Senha" required>
+            <input id="usuario" type="text" placeholder="Usuário" required>
+            <input id="senha" type="password" placeholder="Senha" required>
 
             <button type="submit">Entrar</button>
         </form>
 
-        <p id="errorMsg" class="error">
-            {% if error %} {{ error }} {% endif %}
-        </p>
+        <p id="errorMsg" class="error" style="display:none;"></p>
     </div>
 
-    <script src="js/login.js"></script>
+    <script src="scriptlogin.js"></script>
 
 </body>
 </html>
