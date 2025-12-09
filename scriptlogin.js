@@ -1,25 +1,13 @@
-document.getElementById("loginForm").addEventListener("submit", async function(e) {
-    e.preventDefault();
+function fazerLogin() {
+    const usuario = document.getElementById("user").value;
+    const senha = document.getElementById("pass").value;
 
-    const username = document.getElementById("usuario").value;
-    const password = document.getElementById("senha").value;
+    const USER_CORRETO = "pauloadm123";
+    const SENHA_CORRETA = "paulovitor18";
 
-    // Faz a requisição para o backend hospedado no Render
-    const resposta = await fetch("https://backend-projetopessoal.onrender.com/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ username, password })
-    });
-
-    const data = await resposta.json();
-
-    if (data.ok) {
-        // Login OK → redireciona para o painel
+    if (usuario === USER_CORRETO && senha === SENHA_CORRETA) {
         window.location.href = "admin-visitas.html";
     } else {
-        // Login errado → mostra erro na tela
-        const erro = document.getElementById("errorMsg");
-        erro.style.display = "block";
-        erro.innerText = "Usuário ou senha incorretos.";
+        document.getElementById("error").textContent = "Usuário ou senha incorretos.";
     }
-});
+}
