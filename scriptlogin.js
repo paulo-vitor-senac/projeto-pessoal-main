@@ -1,10 +1,3 @@
-document
-  .getElementById("loginForm")
-  .addEventListener("submit", function (event) {
-    event.preventDefault(); // evita recarregar a página
-    fazerLogin();
-  });
-
 function fazerLogin() {
   const usuario = document.getElementById("user").value;
   const senha = document.getElementById("pass").value;
@@ -19,3 +12,10 @@ function fazerLogin() {
       "Usuário ou senha incorretos.";
   }
 }
+
+// 🔥 Permite login ao apertar ENTER mesmo sem form
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Enter") {
+    fazerLogin();
+  }
+});
