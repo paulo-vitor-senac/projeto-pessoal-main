@@ -46,40 +46,6 @@
     <footer>
         <p>&copy; 2025 Todos os Direitos Reservados - Paulo Vitor</p>
     </footer>
-
-    <script>
-        const form = document.getElementById('meuForm');
-        const statusMensagem = document.getElementById('statusMensagem');
-
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-
-            const formData = {
-                nome: form.nome.value,
-                email: form.email.value,
-                titulo: form.titulo.value,
-                mensagem: form.mensagem.value
-            };
-
-            try {
-                const response = await fetch('https://backend-contatos-0ji7.onrender.com/contato', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(formData)
-                });
-
-                if (response.ok) {
-                    statusMensagem.textContent = 'Mensagem enviada com sucesso!';
-                    form.reset();
-                } else {
-                    statusMensagem.textContent = 'Erro ao enviar a mensagem. Tente novamente.';
-                }
-            } catch (error) {
-                console.error(error);
-                statusMensagem.textContent = 'Erro ao enviar a mensagem. Tente novamente.';
-            }
-        });
-    </script>
     <script src="scriptcontato.js"></script>
 </body>
 </html>
