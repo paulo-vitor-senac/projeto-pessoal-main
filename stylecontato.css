@@ -92,7 +92,7 @@ form {
   max-width: 800px;
   display: flex;
   flex-direction: column;
-  gap: 0px;
+  gap: 5px;
   background-color: transparent;
 }
 
