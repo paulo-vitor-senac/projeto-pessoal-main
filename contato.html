@@ -30,15 +30,11 @@
                 <input type="text" name="nome" placeholder="Nome" required>
                 <input type="email" name="email" placeholder="Seu Email" required>
             </div>
-
             <br>
-
             <input type="text" name="titulo" placeholder="Título" required>
             <br><br>
-
             <textarea name="mensagem" placeholder="Sua Mensagem" required></textarea>
             <br><br>
-
             <button type="submit">Enviar</button>
         </form>
         <p id="statusMensagem"></p>
@@ -51,9 +47,7 @@
     <!-- EmailJS SDK -->
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script>
-        (function(){
-            emailjs.init("7_4GeKAKGXRmJZQVy"); // Substitua pelo seu User ID do EmailJS
-        })();
+        emailjs.init("7_4GeKAKGXRmJZQVy"); // User ID
 
         const form = document.getElementById("meuForm");
         const statusMensagem = document.getElementById("statusMensagem");
@@ -61,8 +55,11 @@
         form.addEventListener("submit", function(e){
             e.preventDefault();
 
-            emailjs.sendForm("service_d1kydlp", "template_hudeghk", this) // Template ID aqui
-            .then(() => {
+            emailjs.sendForm(
+                "service_d1kydlp",      // Service ID
+                "template_hudeghk",     // Template ID
+                this
+            ).then(() => {
                 statusMensagem.textContent = "Mensagem enviada com sucesso!";
                 statusMensagem.style.color = "green";
                 form.reset();
